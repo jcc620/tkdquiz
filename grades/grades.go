@@ -1,4 +1,4 @@
-package quiz
+package grades
 
 type Grade int64
 
