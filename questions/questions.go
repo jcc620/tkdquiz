@@ -9,4 +9,10 @@ var questionBank []Question = []Question{
 		grade:  grades.WhiteBelt,
 		qType:  angle,
 	},
+	{
+		Query:  "What is the angle of the back foot in Walking Stance?",
+		Answer: "25°",
+		grade:  grades.WhiteBelt,
+		qType:  angle,
+	},
 }
