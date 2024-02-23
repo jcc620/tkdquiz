@@ -2,6 +2,10 @@ package questions
 
 import "github.com/jcc620/tkdquiz/grades"
 
+var possibleAnswers map[questionType][]string = map[questionType][]string{
+	angle: {"0°", "15°", "22.5°", "25°", "45°", "75°"},
+}
+
 var questionBank []Question = []Question{
 	{
 		Query:  "What is the angle of the front foot in Walking Stance?",
