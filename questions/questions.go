@@ -19,4 +19,16 @@ var questionBank []Question = []Question{
 		grade:  grades.WhiteBelt,
 		qType:  angle,
 	},
+	{
+		Query:  "What is the angle of the feet in Parallel Stance?",
+		Answer: "0°",
+		grade:  grades.WhiteBelt,
+		qType:  angle,
+	},
+	{
+		Query:  "What is the angle of the feet in Attention Stance?",
+		Answer: "22.5°",
+		grade:  grades.WhiteBelt,
+		qType:  angle,
+	},
 }
