@@ -2,6 +2,7 @@ package questions
 
 import "github.com/jcc620/tkdquiz/grades"
 
-func GenerateQuestions(_ grades.Grade, _, _ int) []Question {
+// GenerateQuestions returns qCount questions appropriate for those up to and including grade.
+func GenerateQuestions(grade grades.Grade, qCount int) []Question {
 	return questionBank
 }
