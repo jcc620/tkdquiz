@@ -17,13 +17,16 @@ func GenerateQuestions(grade grades.Grade, n int, seed int64) []Question {
 		nextQ := questionBank[nextQIdx]
 		if !chosenQuestions[nextQIdx] && nextQ.grade <= grade {
 			questions = append(questions, nextQ)
+			chosenQuestions[nextQIdx] = true
 		}
 	}
 	return questions
 }
 
 // GenerateWrongAnswers returns a slice of incorrect but plausible answers for q.
-func (q *Question) GenerateWrongAnswers(n int) []string {
+// seed is used to seed the random number generator.
+func (q *Question) GenerateWrongAnswers(n int, seed int64) []string {
+	rand.Seed(seed)
 	wrongAnswerBank := possibleAnswers[q.qType]
 	chosenWrongAnswers := map[int]bool{}
 	wrongAnswers := []string{}
@@ -32,6 +35,7 @@ func (q *Question) GenerateWrongAnswers(n int) []string {
 		nextA := wrongAnswerBank[nextAIdx]
 		if !chosenWrongAnswers[nextAIdx] && nextA != q.Answer {
 			wrongAnswers = append(wrongAnswers, nextA)
+			chosenWrongAnswers[nextAIdx] = true
 		}
 	}
 	return wrongAnswers
